@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#10aeb5"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="140dp"
+        android:layout_height="26dp"
+        android:text="数据来源：丁香园"
+        android:textColor="#f4fbfc"
+        android:textSize="17sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="32dp"
+        android:background="@drawable/rounded_corner_subtitle"
+        android:text="新型冠状病毒肺炎"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <TextView
+        android:layout_width="270dp"
+        android:layout_height="45dp"
+        android:text="疫情实时大数据报告"
+        android:textColor="#ffffff"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.156" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="100dp"
+        android:layout_height="32dp"
+        android:background="@drawable/rounded_corner_select"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="35dp"
+            android:layout_height="26dp"
+            android:gravity="center"
+            android:text="全国"
+            android:textColor="#165d60"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.335"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.500000" />
+
+        <View
+            android:layout_width="25dp"
+            android:layout_height="18dp"
+            android:background="@drawable/ic_arrow_drop_down_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.500" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="562dp"
+        android:background="@drawable/rounded_corner_body"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="96dp"
+                android:layout_height="27dp"
+                android:text="国内疫情"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.01999998" />
+
+            <TextView
+                android:id="@+id/update_time"
+                android:layout_width="200dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="数据更新至 2020.01.31 17:15"
+                android:textColor="#999999"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.01" />
+
+            <View
+                android:id="@+id/stat_container"
+                android:layout_width="312dp"
+                android:layout_height="91dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded_corner_statistics"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.120000005" />
+
+            <TextView
+                android:id="@+id/confirmed"
+                android:layout_width="62dp"
+                android:layout_height="30dp"
+                android:text="981000"
+                android:textColor="#e83132"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/stat_container"
+                app:layout_constraintEnd_toStartOf="@id/suspected"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@id/stat_container"
+                app:layout_constraintTop_toTopOf="@id/stat_container"
+                app:layout_constraintVertical_bias="0.30" />
+
+            <TextView
+                android:id="@+id/confirmed_text"
+                android:layout_width="70dp"
+                android:layout_height="26dp"
+                android:text="确诊病例"
+                android:textColor="#333333"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="@id/confirmed"
+                app:layout_constraintStart_toStartOf="@id/confirmed"
+                app:layout_constraintTop_toBottomOf="@id/confirmed" />
+
+            <TextView
+                android:id="@+id/suspected"
+                android:layout_width="62dp"
+                android:layout_height="30dp"
+                android:text="15238"
+                android:textColor="#ec9217"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/cured"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/confirmed"
+                app:layout_constraintTop_toTopOf="@id/confirmed" />
+
+            <TextView
+                android:id="@+id/suspected_text"
+                android:layout_width="70dp"
+                android:layout_height="26dp"
+                android:text="疑似病例"
+                android:textColor="#333333"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="@id/suspected"
+                app:layout_constraintStart_toStartOf="@id/suspected"
+                app:layout_constraintTop_toBottomOf="@id/suspected" />
+
+            <TextView
+                android:id="@+id/cured"
+                android:layout_width="62dp"
+                android:layout_height="30dp"
+                android:text="192"
+                android:textColor="#10aeb5"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/dead"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/suspected"
+                app:layout_constraintTop_toTopOf="@id/suspected" />
+
+            <TextView
+                android:id="@+id/cured_text"
+                android:layout_width="70dp"
+                android:layout_height="26dp"
+                android:text="治愈病例"
+                android:textColor="#333333"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="@id/cured"
+                app:layout_constraintStart_toStartOf="@id/cured"
+                app:layout_constraintTop_toBottomOf="@id/cured" />
+
+            <TextView
+                android:id="@+id/dead"
+                android:layout_width="62dp"
+                android:layout_height="30dp"
+                android:text="213"
+                android:textColor="#4d5054"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/stat_container"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/cured"
+                app:layout_constraintTop_toTopOf="@id/cured" />
+
+            <TextView
+                android:id="@+id/dead_text"
+                android:layout_width="70dp"
+                android:layout_height="26dp"
+                android:text="死亡病例"
+                android:textColor="#333333"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="@id/dead"
+                app:layout_constraintStart_toStartOf="@id/dead"
+                app:layout_constraintTop_toBottomOf="@id/dead" />
+
+            <ProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/stat_container"
+                app:layout_constraintEnd_toEndOf="@id/stat_container"
+                app:layout_constraintStart_toStartOf="@id/stat_container"
+                app:layout_constraintTop_toTopOf="@id/stat_container" />
+
+            <View
+                android:id="@+id/failed_icon"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/ic_cancel_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/stat_container"
+                app:layout_constraintEnd_toEndOf="@+id/stat_container"
+                app:layout_constraintStart_toStartOf="@+id/stat_container"
+                app:layout_constraintTop_toTopOf="@+id/stat_container" />
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stat_container" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
