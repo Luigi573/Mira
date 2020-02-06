@@ -12,9 +12,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
-    	File file = rootProject.file('local.properties')
-    	if (file.exists()) {
-    		def properties = new Properties()
+    	def properties = new Properties()
+    	File prop = rootProject.file('local.properties')
+    	if (prop.exists()) {
 	        def inputStream = project.rootProject.file('local.properties').newDataInputStream()
 	        properties.load(inputStream)
     	}
