@@ -12,10 +12,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
-    	def properties = new Properties()
-        def inputStream = project.rootProject.file('local.properties').newDataInputStream()
-        properties.load(inputStream)
-
+    	File file = rootProject.file('local.properties')
+    	if (file.exists()) {
+    		def properties = new Properties()
+	        def inputStream = project.rootProject.file('local.properties').newDataInputStream()
+	        properties.load(inputStream)
+    	}
+    	
         releaseConfig {
             storeFile file("../Mira.jks")
             storePassword properties.hasProperty("KEYSTORE_PASS") ? properties.getProperty("KEYSTORE_PASS") :
