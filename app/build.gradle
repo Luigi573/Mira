@@ -12,12 +12,16 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
+    	def properties = new Properties()
+        def inputStream = project.rootProject.file('local.properties').newDataInputStream()
+        properties.load(inputStream)
+
         releaseConfig {
             storeFile file("../Mira.jks")
-            storePassword project.hasProperty("KEYSTORE_PASS") ? KEYSTORE_PASS :
+            storePassword properties.hasProperty("KEYSTORE_PASS") ? properties.getProperty("KEYSTORE_PASS") :
                     System.getenv("KEYSTORE_PASS")
-            keyAlias project.hasProperty("ALIAS_NAME") ? ALIAS_NAME : System.getenv("ALIAS_NAME")
-            keyPassword project.hasProperty("ALIAS_PASS") ? ALIAS_PASS : System.getenv("ALIAS_PASS")
+            keyAlias properties.hasProperty("ALIAS_NAME") ? properties.getProperty("ALIAS_NAME") : System.getenv("ALIAS_NAME")
+            keyPassword properties.hasProperty("ALIAS_PASS") ? properties.getProperty("ALIAS_PASS") : System.getenv("ALIAS_PASS")
         }
     }
 
