@@ -10,14 +10,14 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_41bc7d120b60_key -iv $encrypted_41bc7d120b60_iv
   -in Mira.jks.enc -out Mira.jks -d
 script:
-- "./gradlew clean"
-- "./gradlew build"
 - "./gradlew assembleRelease"
+before_deploy:
+- "cp ./app/build/outputs/apk/prod/release/app-prod-release.apk ."
 deploy:
   provider: releases
   api_key:
     secure: Zf46OrCmaU1OoK8NMiwkpZ7Rt+dV6hJ790hx25iN8frHKEZKjd1ncGDIgzPiMyrEAi4/m3OuPPS9owOaXAYq1BH7yiKv38xsBXd7dKMcHNi1MeGh7Wa5j8gwSInHSgPSBWFsiZ3Ghso7tdVVzNJiy08M3rO4anYpdrVeIyj1HyqjNoBkVvTXCdPhMSG5UJ2v1VRAllzKeFUT8rqDfuTHrahetrqXvejLKMxcB+Wy/CkiMME0BV2ePlV3S08zrpm7MAQUUCwWx769f3H2GZybD14YbgcYxBYaw9JpqcaZx8IB9IWj29sDjWyHlVS5W8Lz6Hl/hgpGHauEkXOuj2d0DI3DgMGqBqcaP16YlTutDnWvHks/Rll4veHbcTOlT9CdhOXtmVR3Qu0Bu3iSVF0Y8dJjsou0wF99nCd08q3UKYWN/gvnNz+PEYgCiu0FFlSlGCZtKPK/nBi+LQes8OgUggEYD6vg3QdMTnh8cutlncBsmgi9dYMK+/cOx87UFJVjwhY2dxdEg5PD5DFkIE2sK+gwT0Y7barNQJQNo9/EzxtDc/TPDENZWPRryiKzeIy8mYFK4eh8ve6W0qQq9dYJvJmEG+dtt9uEPzU5lvQYoZ4CHVBrwHmHxbdEyPIyQBhHRZIVYSZLT569u6rSRliurN/60uR8kuV+1Lb7Iedbcew=
-  file: /app/build/outputs/apk/prod/release/app-prod-release.apk
+  file: app-prod-release.apk
   on:
     repo: Luigi573/Mira
     tags: true
