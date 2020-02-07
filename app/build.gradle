@@ -43,7 +43,7 @@ android {
 
             buildConfigField("String", "HTTP_BASE", '"http://49.232.173.220:3001/"')
 
-            signingConfig signingConfigs.releaseConfig
+            signingConfig signingConfigs.release
         }
     }
 
