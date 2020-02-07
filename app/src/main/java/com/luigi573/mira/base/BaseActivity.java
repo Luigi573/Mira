@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.jaeger.library.StatusBarUtil;
 import com.luigi573.mira.R;
+import com.luigi573.mira.util.DisplayUtils;
 
 import javax.inject.Inject;
 
@@ -32,6 +33,7 @@ public abstract class BaseActivity extends AppCompatActivity implements HasAndro
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        DisplayUtils.setCustomDensity(this, getApplication());
         setTheme(R.style.AppTheme);
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
