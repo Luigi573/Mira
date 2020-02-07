@@ -12,19 +12,17 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
-    	def properties = new Properties()
-    	File prop = rootProject.file('local.properties')
-    	if (prop.exists()) {
-	        def inputStream = project.rootProject.file('local.properties').newDataInputStream()
-	        properties.load(inputStream)
-    	}
-    	
-        releaseConfig {
+    	release {
+            def properties = new Properties()
+            File prop = rootProject.file('local.properties')
+            if (prop.exists()) {
+                def inputStream = project.rootProject.file('local.properties').newDataInputStream()
+                properties.load(inputStream)
+            }
             storeFile file("../Mira.jks")
-            storePassword properties.hasProperty("KEYSTORE_PASS") ? properties.getProperty("KEYSTORE_PASS") :
-                    System.getenv("KEYSTORE_PASS")
-            keyAlias properties.hasProperty("ALIAS_NAME") ? properties.getProperty("ALIAS_NAME") : System.getenv("ALIAS_NAME")
-            keyPassword properties.hasProperty("ALIAS_PASS") ? properties.getProperty("ALIAS_PASS") : System.getenv("ALIAS_PASS")
+            storePassword properties.containsKey("KEYSTORE_PASS") ? properties.getProperty("KEYSTORE_PASS") : System.getenv("KEYSTORE_PASS")
+            keyAlias properties.containsKey("ALIAS_NAME") ? properties.getProperty("ALIAS_NAME") : System.getenv("ALIAS_NAME")
+            keyPassword properties.containsKey("ALIAS_PASS") ? properties.getProperty("ALIAS_PASS") : System.getenv("ALIAS_PASS")
         }
     }
 
@@ -39,6 +37,7 @@ android {
 
         release {
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
 
